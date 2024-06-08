@@ -13,19 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 
-Route::get('/user/{id}', function ($id) {
-    echo"User ID :" . $id;
-});
-Route::get('/about', function () {
-    echo"Halaman about";
-});
-Route::get('/mahasiswa', function () {
-    echo"Halaman Mahasiswa";
-});
-Route::get('/user/{name?}', function ($name = "Kelly") {
-    echo"Halo Saya :" . $name;
-});
+Route::get('/index', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
