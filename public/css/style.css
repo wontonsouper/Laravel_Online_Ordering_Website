@@ -303,9 +303,10 @@
 }
 
 .visiting-hours {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Hanging-Wall-Sign-MockUp.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../images/Hanging-Wall-Sign-MockUp.jpg') center center no-repeat;
     background-size: cover;
 }
+
 
 .visiting-hours .list-group-item {
     display: flex;
