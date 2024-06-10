@@ -30,11 +30,10 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 </head>
 
 <body>
-
-
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="row gx-0 d-none d-lg-flex">
@@ -88,8 +87,8 @@
 
     <!-- Header Start -->
     <div class="container-fluid bg-dark p-0 mb-5">
-    <div class="row g-0 flex-column-reverse flex-lg-row">
-        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+        <div class="row g-0 flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
             <div class="owl-carousel header-carousel">
                 <div class="owl-carousel-item">
                     <img class="img-fluid" src="{{ asset('images/menus/Porto_s Big Breakfast.jpeg') }}" alt="">
@@ -107,10 +106,9 @@
                     <img class="img-fluid" src="{{ asset('images/menus/Kue Lobak.jpg') }}" alt="">
                 </div>
             </div>
+            </div>
         </div>
     </div>
-</div>
-
     <!-- Header End -->
 
 
