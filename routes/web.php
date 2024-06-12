@@ -16,7 +16,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+
 
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
