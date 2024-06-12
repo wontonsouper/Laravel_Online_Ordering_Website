@@ -19,6 +19,6 @@ class Product extends Model
         'product_updated',
     ];
 
-    protected $table = 'Product';
+    protected $table = 'products';
 
 }
