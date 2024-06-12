@@ -142,6 +142,11 @@
                                 <td>{{ $pd->product_description }}</td>
                                 <td>
                                     <a href="{{ route('product.edit', $pd->id) }}" class="btn btn-warning">Edit</a>
+                                    <form action="{{ route('product.destroy', $pd->id) }}" method="POST" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

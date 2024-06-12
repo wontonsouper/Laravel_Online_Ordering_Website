@@ -61,4 +61,13 @@ class ProductController extends Controller
         return redirect()->route(route: 'product')
             ->with(key: 'success', value: 'Product updated successfully');
     }
+
+    // Destroy method for Product
+    public function destroy($id)
+    {
+        $pd = Product::find($id);
+        $pd -> delete();
+        return redirect()->route('product')
+            ->with('success', 'Product deleted successfully');
+    }
 }
