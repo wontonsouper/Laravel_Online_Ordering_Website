@@ -36,27 +36,28 @@
     <div class="container-fluid bg-dark p-0 mb-5">
         <div class="row g-0 flex-column-reverse flex-lg-row">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-            <div class="owl-carousel header-carousel">
-                <div class="owl-carousel-item">
-                    <img class="img-fluid" src="{{ asset('images/Food n Snack/Porto_s Big Breakfast.jpeg') }}" alt="">
-                </div>
-                <div class="owl-carousel-item">
-                    <img class="img-fluid" src="{{ asset('images/Food n Snack/Creamy Ginger Linguine.JPG') }}" alt="">
-                </div>
-                <div class="owl-carousel-item">
-                    <img class="img-fluid" src="{{ asset('images/Food n Snack/Nachos.jpg') }}" alt="">
-                </div>
-                <div class="owl-carousel-item">
-                    <img class="img-fluid" src="{{ asset('images/Food n Snack/khewnyuk.jpg') }}" alt="">
-                </div>
-                <div class="owl-carousel-item">
-                    <img class="img-fluid" src="{{ asset('images/Food n Snack/Kue Lobak.jpg') }}" alt="">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="{{ asset('images/menus/Porto_s Big Breakfast.jpeg') }}" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="{{ asset('images/menus/Creamy Ginger Linguine.JPG') }}" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="{{ asset('images/menus/Nachos.jpg') }}" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="{{ asset('images/menus/khewnyuk.jpg') }}" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="{{ asset('images/menus/Kue Lobak.jpg') }}" alt="">
+                    </div>
                 </div>
             </div>
             </div>
         </div>
     </div>
-
+    
     <!-- About Us Start -->
     <div class="container-fluid py-5">
         <div class="container">
@@ -85,7 +86,7 @@
         </div>
     </div>
     <!-- About Us End -->
-
+    
 
     <!-- Best Sellers Start -->
     <div class="container-xxl py-5">
@@ -107,7 +108,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/Creamy Ginger Linguine.JPG" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/Creamy Ginger Linguine.JPG') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Pasta</p>
                                         <h5 class="text-white mb-0">Creamy Ginger Linguine</h5>
@@ -118,7 +119,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/Ropang.jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/Ropang.jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Toast</p>
                                         <h5 class="text-white mb-0">RoPang</h5>
@@ -129,7 +130,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/oreo matcha latte.JPG" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/oreo matcha latte.JPG') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Coffee</p>
                                         <h5 class="text-white mb-0">Oreo Matcha Latte</h5>
@@ -144,7 +145,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/Salted Eggyolk .jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/Salted Eggyolk .jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Rice Bowl</p>
                                         <h5 class="text-white mb-0">Salted Eggyolk</h5>
@@ -155,7 +156,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/PorkThaiBasil.jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/PorkThaiBasil.jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Rice Bowl</p>
                                         <h5 class="text-white mb-0">Pork Thai Basil</h5>
@@ -166,7 +167,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/coffee latte.jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/coffee latte.jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Coffee</p>
                                         <h5 class="text-white mb-0">Coffee Latte</h5>
@@ -181,7 +182,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/Sambal Matah Bowl.jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/Sambal Matah Bowl.jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Rice Bowl</p>
                                         <h5 class="text-white mb-0">Sambal Matah Bowl</h5>
@@ -192,7 +193,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/nasgor kampung.jpg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/nasgor kampung.jpg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Fried Rice</p>
                                         <h5 class="text-white mb-0">Nasi Goreng Kampung</h5>
@@ -203,7 +204,7 @@
                         <div class="col-12">
                             <a class="menu-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/Food n Snack/Chunky Avocado Coffee Float.jpeg" alt="">
+                                    <img class="img-fluid" src="{{ asset('images/menus/Chunky Avocado Coffee Float.jpeg') }}" alt="">
                                     <div class="menu-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Coffee</p>
                                         <h5 class="text-white mb-0">Chunky Avocado Coffee Float</h5>
@@ -216,7 +217,7 @@
             </div>
         </div>
     </div>
-    <!-- Animal End -->
+    <!-- Best Sellers End -->
 
 
     <!-- Visiting Hours Start -->
@@ -256,6 +257,7 @@
             </div>
         </div>
     </div>
+
     <!-- Visiting Hours End -->
 
 
