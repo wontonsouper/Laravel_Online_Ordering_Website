@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>Porto's Cafe</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,62 +28,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small> Jl.Muara Karang Blok Z1 Timur No.8 (Pasar Muara Karang) 14450</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 07.00 AM - 20.00 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+62 21 6614845</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand p-0">
-        <img class="img-fluid me-3" src="{{ asset('images/icon/Portos_Logo_Ring') }}" alt="Logo">
-            <h1 class="m-0 text-primary">Porto's Cafe</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
-                <a href="index.html" class="nav-item nav-link ">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-            </div>
-            <a href="" class="btn btn-primary">Order Now<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Header Start -->
+    <!-- Carousel Start -->
     <div class="container-fluid bg-dark p-0 mb-5">
         <div class="row g-0 flex-column-reverse flex-lg-row">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -109,7 +56,35 @@
             </div>
         </div>
     </div>
-    <!-- Header End -->
+
+    <!-- About Us Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h4>
+                <h1 class="display-4">Serving Since 2012</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Our Story</h1>
+                    <p>Porto’s Bakery, Coffee & Kitchen adalah sebuah restoran yang menjual roti, kopi, dan makanan lainnya. Lokasinya di Muara Karang, Jakarta Utara. Restoran ini terletak di seberang Pasar Muara Karang.</p>
+                </div>
+                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" style="object-fit: cover;" src="{{ asset('images/about.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Come To Porto's!</h1>
+                    <p>Menu-menu yang disajikan dapat dinikmati segala usia dan suasana restoran sangat cocok untuk keluarga maupun untuk bekerja.</p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> Free WI-FI</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> Charging Port</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> Air Conditioner</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us End -->
 
 
     <!-- Best Sellers Start -->
@@ -284,38 +259,7 @@
     <!-- Visiting Hours End -->
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl.Muara Karang Blok Z1 Timur No.8 (Pasar Muara Karang) 14450</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 21 6614845<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    +62 895 3598 62781</p>
-                    <p class="mb-2"><i class="fab fa-instagram"></i>&nbsp;&nbsp; @portosbnd</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+    
 
 
     <!-- Back to Top -->
