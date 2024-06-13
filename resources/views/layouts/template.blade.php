@@ -6,9 +6,7 @@
 <body id="page-top">
     @include('layouts.menu')
 
-    <main>
-        @yield('content')
-    </main>
+    @yield('content')
 
     @include('layouts.footer')
 
