@@ -1,4 +1,6 @@
+@extends('layouts.template')
 
+@section('content')
 <!-- Carousel Start -->
 <div class="container-fluid bg-dark p-0 mb-5">
     <div class="row g-0 flex-column-reverse flex-lg-row">
@@ -46,3 +48,5 @@
     </div>
 </div>
 <!-- Carousel End -->
+
+@endsection
