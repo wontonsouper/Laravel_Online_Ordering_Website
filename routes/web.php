@@ -21,11 +21,13 @@ use App\Http\Controllers\AdminController;
 
 Auth::routes();
 
+Route::redirect('/', '/index');
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'index'])->name('product');
