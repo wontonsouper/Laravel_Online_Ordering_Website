@@ -16,40 +16,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenusController;
 use App\Http\Controllers\ContactController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
-=======
-<<<<<<< Updated upstream
-=======
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
+Auth::routes();
 
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+Route::redirect('/', '/index');
+Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
-Route::get('/orderpage', [OrderController::class, 'index']);
 Route::get('/home', [AdminController::class, 'index'])->name('home');
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
-Route::get('/product', [ProductController::class, 'index'])->name('product');
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 
-Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
-Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+    Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+});
