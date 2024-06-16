@@ -93,9 +93,8 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Our Best Sellers</p>
+                    <p><span class="text-primary me-2"></span>Our Best Sellers</p>
                     <h1 class="display-5 mb-0">Check out our <span class="text-primary">Best Selling</span> menus &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-primary py-3 px-5" href="">Order Here</a>
                     </h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
