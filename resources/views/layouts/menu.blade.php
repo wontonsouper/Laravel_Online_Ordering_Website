@@ -28,7 +28,6 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-    <a href="index.html" class="navbar-brand p-0">
     <a href="{{ url('index')}}" class="navbar-brand p-0">
     <img class="img-fluid me-3" src="{{ asset('images/icon/Portos_Logo_Ring') }}" alt="Logo">
         <h1 class="m-0 text-primary">Porto's Cafe</h1>
@@ -38,11 +37,6 @@
     </button>
     <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-            <a href="{{ url('index')}}" class="nav-item nav-link ">Home</a>
-            <a href="{{ url('contact')}}" class="nav-item nav-link">Contact Us</a>
-            <a href="{{ url('login')}}" class="nav-item nav-link">Admin</a>
-        </div>
-        <a href="" class="btn btn-primary">Order Now<i class="fa fa-arrow-right ms-3"></i></a>
             <a href="{{ url('index')}}" class="nav-item nav-link ">Home</a>
             <a href="{{ url('menus')}}" class="nav-item nav-link">Menus</a>
             <a href="{{ url('contact')}}" class="nav-item nav-link">Contact Us</a>

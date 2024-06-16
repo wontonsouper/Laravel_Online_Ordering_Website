@@ -18,6 +18,7 @@ use App\Http\Controllers\MenusController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 
 Auth::routes();
 
@@ -27,6 +28,7 @@ Route::get('/home', [AdminController::class, 'index'])->name('home');
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/orderpage', [OrderController::class, 'index']);
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
