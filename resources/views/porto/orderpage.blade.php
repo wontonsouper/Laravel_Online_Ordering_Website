@@ -491,9 +491,105 @@
                                     <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">SNACK</div>
                                     <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                         <h4>Cakwe and Coffee (油炸鬼 黑咖啡)</h4>
-                                        <p>Deep fried strip of dough in lightly salted and a cup of coffee.</p>
+                                        <p>Deep fried strip of dough in lightly salted and a cup of coffee</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                             <p class="text-dark fs-5 fw-bold mb-0">Rp. 35.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/KiwiLychee.jpg') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Kiwi Lychee / Soda</h4>
+                                        <p> Fresh green kiwi, lychee papermint with or without Soda</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 40.000 - 45.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/WaterMelonSlushEdit.png') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Watermelon Slush</h4>
+                                        <p>Fresh watermelon, lime juice, lychee syrup, papermint</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 40.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/BrornSugarBobaFreshMilk.jpg') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Brown Sugar Boba Fresh Milk</h4>
+                                        <p>Creamy fresh milk with rich brown sugar syrup and chewy boba pearls</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 30.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/avocado.jpg') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Chunky Avocado Coffee Float</h4>
+                                        <p>Smooth avocado blended with rich coffee, topped with creamy ice cream</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 48.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/Coffee Lattee (Black).jpeg') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Coffee Latte</h4>
+                                        <p>Smooth espresso blended with steamed milk, topped with a light layer of foam</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 35.000 - 38.000</p>
+                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="rounded position-relative menus-item">
+                                    <div class="menus-img">
+                                        <img src="{{ asset('images/menus/oreo matcha latte.jpg') }}"menus-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">BEVERAGES</div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>Oreo Matcha Latte</h4>
+                                        <p>Creamy matcha latte blended with crunchy Oreo pieces for a delightful twist</p>
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. 40.000</p>
                                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                         </div>
                                     </div>
