@@ -40,6 +40,7 @@
             <a href="{{ url('index')}}" class="nav-item nav-link ">Home</a>
             <a href="{{ url('menus')}}" class="nav-item nav-link">Menus</a>
             <a href="{{ url('contact')}}" class="nav-item nav-link">Contact Us</a>
+            <a href="{{ url('review/create')}}" class="nav-item nav-link">Review</a>
             <a href="{{ url('login')}}" class="nav-item nav-link">Admin</a>
         </div>
         <a href="{{ url('orderpage')}}" class="btn btn-primary">Order Now<i class="fa fa-arrow-right ms-3"></i></a>
