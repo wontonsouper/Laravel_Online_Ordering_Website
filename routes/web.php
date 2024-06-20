@@ -31,7 +31,7 @@ Route::redirect('/', '/index');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
-Route::get('/orderpage', [OrderController::class, 'index']);
+Route::get('/orderpage', [OrderController::class, 'index'])->name('orderpage');
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::get('/review/create', [ReviewController::class, 'create'])->name('review.create');
