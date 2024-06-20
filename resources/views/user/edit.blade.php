@@ -4,6 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @elseif ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    @foreach ($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">{{ __('Edit User') }}</div>
 
@@ -45,15 +56,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Update User') }}
                                 </button>
-                                <a href="{{ route('password.request') }}" class="btn btn-secondary">Reset Password</a>
                             </div>
                         </div>
                     </form>
                     <form id="passwordResetForm" method="POST" action="{{ route('password.email') }}">
                         @csrf
-                    
+
                         <input type="hidden" name="email" value="{{ $user->email }}">
-                    
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
