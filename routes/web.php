@@ -21,6 +21,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MailController;
 
 Auth::routes();
 
@@ -60,5 +61,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
+    // mail routes
+    Route::get('/mail', [MailController::class, 'index'])->name('mail');
 
+    Route::post('/mail/send-email', [MailController::class, 'send'])->name('mail.send-email');
 });

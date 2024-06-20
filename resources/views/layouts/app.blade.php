@@ -52,6 +52,7 @@
                             <a href="{{ url('product')}}" class="nav-item nav-link">Product</a>
                             <a href="{{ url('review')}}" class="nav-item nav-link">Review</a>
                             <a href="{{ url('user')}}" class="nav-item nav-link">User</a>
+                            <a href="{{ url('mail')}}" class="nav-item nav-link">Mail</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
