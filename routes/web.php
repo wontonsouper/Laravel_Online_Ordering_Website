@@ -20,6 +20,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CheckoutController;
 
 Auth::routes();
 
@@ -29,6 +30,7 @@ Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/orderpage', [OrderController::class, 'index']);
+Route::get('/checkout', [CheckoutController::class, 'index']);
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::get('/review/create', [ReviewController::class, 'create'])->name('review.create');
