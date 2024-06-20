@@ -23,6 +23,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MailController;
 
+
 Auth::routes();
 
 Route::redirect('/', '/index');
@@ -37,7 +38,6 @@ Route::get('/review/create', [ReviewController::class, 'create'])->name('review.
 Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
 
 Route::middleware(['auth'])->group(function () {
-    // product routes
     Route::get('/product', [ProductController::class, 'index'])->name('product');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
@@ -46,7 +46,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 
-    // review routes
     Route::get('/review', [ReviewController::class, 'index'])->name('review');
 
     Route::put('/review/approve/{id}', [ReviewController::class, 'approve'])->name('review.approve');
@@ -65,4 +64,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/mail', [MailController::class, 'index'])->name('mail');
 
     Route::post('/mail/send-email', [MailController::class, 'send'])->name('mail.send-email');
+  
 });

@@ -14,11 +14,10 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Home</a>
+                <a class="btn btn-link" href="">Menu</a>
+                <a class="btn btn-link" href="">Order Now</a>
                 <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
             </div>
         </div>
     </div>
@@ -26,7 +25,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">Kelompok 4</a>, All Right Reserved.
                 </div>
             </div>
         </div>
