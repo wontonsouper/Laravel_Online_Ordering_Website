@@ -20,6 +20,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MailController;
+
 
 Auth::routes();
 
@@ -47,4 +50,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::put('/review/approve/{id}', [ReviewController::class, 'approve'])->name('review.approve');
     Route::delete('/review/destroy/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
+    // user routes
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+
+    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+    Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+    // mail routes
+    Route::get('/mail', [MailController::class, 'index'])->name('mail');
+
+    Route::post('/mail/send-email', [MailController::class, 'send'])->name('mail.send-email');
+  
 });
