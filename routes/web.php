@@ -20,7 +20,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\UserController;
 
 Auth::routes();
 
@@ -36,7 +35,6 @@ Route::get('/review/create', [ReviewController::class, 'create'])->name('review.
 Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
 
 Route::middleware(['auth'])->group(function () {
-    // product routes
     Route::get('/product', [ProductController::class, 'index'])->name('product');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
@@ -45,20 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 
-    // review routes
     Route::get('/review', [ReviewController::class, 'index'])->name('review');
 
     Route::put('/review/approve/{id}', [ReviewController::class, 'approve'])->name('review.approve');
     Route::delete('/review/destroy/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
-
-    // user routes
-    Route::get('/user', [UserController::class, 'index'])->name('user');
-    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-    Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
-
-    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
-    Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-
-
 });
