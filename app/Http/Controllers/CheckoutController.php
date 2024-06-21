@@ -10,11 +10,10 @@ use App\Models\Product;
 class CheckoutController extends Controller
 {
     public function index()
-    {
-        $products = Product::all();
-
-        return view('porto.checkout', compact('products'));
-    }
+{
+    $cart = session()->get('cart', []);
+    return view('porto.checkout', compact('cart'));
+}
 
     
 }

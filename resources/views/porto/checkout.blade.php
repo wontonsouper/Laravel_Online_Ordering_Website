@@ -37,26 +37,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($products as $product)
+                                @foreach($cart as $id => $details)
                                 <tr>
                                     <th scope="row">
                                         <div class="d-flex align-items-center mt-2">
-                                            <img src="{{ asset('img/'.$product->product_image) }}" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                            <img src="{{ asset('images/menus/'.$details['image']) }}" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                         </div>
                                     </th>
-                                    <td class="py-5">{{ $product->product_name }}</td>
-                                    <td class="py-5">{{ $product->product_price }}</td>
-                                    <td class="py-5">
-                                        <input type="number" name="products[{{ $product->id }}][quantity]" min="1" value="1" class="form-control">
-                                        <input type="hidden" name="products[{{ $product->id }}][id]" value="{{ $product->id }}">
-                                    </td>
+                                    <td class="py-5">{{ $details['name'] }}</td>
+                                    <td class="py-5">Rp. {{ number_format($details['price'], 0, ',', '.') }}</td>
+                                    <td class="py-5">{{ $details['quantity'] }}</td>
+                                    <input type="hidden" name="products[{{ $id }}][id]" value="{{ $id }}">
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <div class="col-12 text-end">
+                        <h4>Total Price: Rp. {{ number_format(array_reduce($cart, function($carry, $item) { return $carry + ($item['price'] * $item['quantity']); }, 0), 0, ',', '.') }}</h4>
+                    </div>
                     <div class="row g-4 text-center align-items-center justify-content-center pt-4">
                         <button type="submit" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place Order</button>
+                    </div>
+                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                        <a href="{{ route('cart') }}" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Go to Cart</a>
                     </div>
                 </div>
             </div>
