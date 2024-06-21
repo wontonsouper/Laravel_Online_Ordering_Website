@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid menus py-5">
-    <div class="container py-5">
+    <div class="container py-5">       
         <h1 class="mb-4">Order Now</h1>
         <div class="row g-4">
             <div class="col-lg-12">
@@ -31,7 +31,6 @@
                                 <input type="hidden" name="categories" value="{{ request('categories') }}">
                                 <input type="hidden" name="minPrice" value="{{ request('minPrice') }}">
                                 <input type="hidden" name="maxPrice" value="{{ request('maxPrice') }}">
-                                <!-- Include other form elements here if needed -->
                             </form>
                         </div>
                     </div>
@@ -120,7 +119,12 @@
                                         <p>{{ $product->product_description }}</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                             <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->product_price, 0, ',', '.') }}</p>
-                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +132,6 @@
                             @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

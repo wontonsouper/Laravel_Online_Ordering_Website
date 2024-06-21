@@ -20,8 +20,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\CartController;
 
 
 Auth::routes();
@@ -31,11 +33,26 @@ Route::redirect('/', '/index');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
-Route::get('/orderpage', [OrderController::class, 'index'])->name('orderpage');
 Route::get('/home', [AdminController::class, 'index'])->name('home');
+Route::get('/orderpage', [OrderController::class, 'index'])->name('orderpage');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
+
+// review routes
 Route::get('/review/create', [ReviewController::class, 'create'])->name('review.create');
 Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
+
+// order checkout routes
+Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+
+// cart routes
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'index'])->name('product');
