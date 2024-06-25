@@ -34,7 +34,7 @@ Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/home', [AdminController::class, 'index'])->name('home');
-Route::get('/orderpage', [OrderController::class, 'index'])->name('orderpage');
+Route::get('/orderpage', [OrderController::class, 'orderpage'])->name('orderpage');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 
@@ -44,6 +44,8 @@ Route::post('/review/store', [ReviewController::class, 'store'])->name('review.s
 
 // order checkout routes
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+Route::get('/order/{order}', [OrderController::class, 'show'])->name('orders.show');
+Route::put('/order/{order}', [OrderController::class, 'update'])->name('orders.update');
 
 // cart routes
 
@@ -55,6 +57,7 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 
 
 Route::middleware(['auth'])->group(function () {
+    // product routes
     Route::get('/product', [ProductController::class, 'index'])->name('product');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
@@ -63,10 +66,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 
+    // review routes
     Route::get('/review', [ReviewController::class, 'index'])->name('review');
 
     Route::put('/review/approve/{id}', [ReviewController::class, 'approve'])->name('review.approve');
     Route::delete('/review/destroy/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
+    // order routes
+    Route::get('/order', [OrderController::class, 'index'])->name('order');
+
 
     // user routes
     Route::get('/user', [UserController::class, 'index'])->name('user');
