@@ -35,6 +35,7 @@ Route::get('/menus', [MenusController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 Route::get('/orderpage', [OrderController::class, 'orderpage'])->name('orderpage');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 
@@ -44,12 +45,8 @@ Route::post('/review/store', [ReviewController::class, 'store'])->name('review.s
 
 // order checkout routes
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
-Route::get('/order/{order}', [OrderController::class, 'show'])->name('orders.show');
-Route::put('/order/{order}', [OrderController::class, 'update'])->name('orders.update');
 
 // cart routes
-
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
@@ -74,7 +71,9 @@ Route::middleware(['auth'])->group(function () {
 
     // order routes
     Route::get('/order', [OrderController::class, 'index'])->name('order');
-
+    Route::get('/order/{order}', [OrderController::class, 'show'])->name('order.show');
+    
+    Route::put('/order/update/{order}', [OrderController::class, 'update'])->name('order.update');
 
     // user routes
     Route::get('/user', [UserController::class, 'index'])->name('user');
