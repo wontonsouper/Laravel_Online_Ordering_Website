@@ -17,7 +17,7 @@ class CartController extends Controller
     {
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
-
+    
         if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
@@ -28,10 +28,30 @@ class CartController extends Controller
                 "image" => $product->product_image
             ];
         }
-
+    
         session()->put('cart', $cart);
         return redirect()->route('cart')->with('success', 'Product added to cart!');
     }
+
+    // public function add($id)
+    // {
+    //     $product = Product::findOrFail($id);
+    //     $cart = session()->get('cart', []);
+
+    //     if (isset($cart[$id])) {
+    //         $cart[$id]['quantity']++;
+    //     } else {
+    //         $cart[$id] = [
+    //             "name" => $product->product_name,
+    //             "quantity" => 1,
+    //             "price" => $product->product_price,
+    //             "image" => $product->product_image
+    //         ];
+    //     }
+
+    //     session()->put('cart', $cart);
+    //     return redirect()->route('cart')->with('success', 'Product added to cart!');
+    // }
 
     public function update(Request $request, $id)
     {
