@@ -70,7 +70,6 @@ class OrderController extends Controller
     }
 
     // store method
-
     public function store(Request $request)
     {
         try {
@@ -83,7 +82,7 @@ class OrderController extends Controller
                 'order_table' => $request->order_table,
                 'order_note' => $request->order_note,
                 'order_status' => 'pending',
-                'order_total' => 0, // temporary, will update later
+                'order_total' => 0,
             ]);
     
             $totalPrice = 0;
@@ -133,11 +132,18 @@ class OrderController extends Controller
         }
     }
     
-    
-    
     public function success()
     {
         return view('order.success');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $order = Order::findOrFail($id);
+        $order->order_status = $request->input('order_status');
+        $order->save();
+
+        return redirect()->route('order')->with('success', 'Order status updated successfully!');
     }
 
     public function show(Order $order)
