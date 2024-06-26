@@ -51,8 +51,6 @@ Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-
-
 Route::middleware(['auth'])->group(function () {
     // product routes
     Route::get('/product', [ProductController::class, 'index'])->name('product');
@@ -62,6 +60,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    // menu routes
+    Route::get('/menu', [MenusController::class, 'indexAdmin'])->name('menu');
+    Route::get('/menu/edit/{id}', [MenusController::class, 'edit'])->name('menu.edit');
+
+    Route::post('/menu/store', [MenusController::class, 'store'])->name('menu.store');
+    Route::put('/menu/update/{id}', [MenusController::class, 'update'])->name('menu.update');
+    Route::delete('/menu/destroy/{id}', [MenusController::class, 'destroy'])->name('menu.destroy');
+
 
     // review routes
     Route::get('/review', [ReviewController::class, 'index'])->name('review');

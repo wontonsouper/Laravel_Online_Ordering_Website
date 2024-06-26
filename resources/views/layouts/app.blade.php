@@ -50,6 +50,7 @@
                             @endif --}}
                         @else
                             <a href="{{ url('product')}}" class="nav-item nav-link">Product</a>
+                            <a href="{{ url('menu')}}" class="nav-item nav-link">Menu</a>
                             <a href="{{ url('review')}}" class="nav-item nav-link">Review</a>
                             <a href="{{ url('order')}}" class="nav-item nav-link">Order</a>
                             <a href="{{ url('user')}}" class="nav-item nav-link">User</a>
