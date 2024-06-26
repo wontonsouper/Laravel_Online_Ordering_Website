@@ -34,6 +34,12 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $image->title }}</h5>
                         <p class="card-text">Order: {{ $image->order }}</p>
+                        <a href="{{ route('menu.edit', $image->id) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('menu.destroy', $image->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
