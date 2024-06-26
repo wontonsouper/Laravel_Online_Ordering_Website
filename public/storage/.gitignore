@@ -1,8 +1,0 @@
-# Ignore everything in the storage folder
-/storage/*
-
-# But do not ignore the .gitignore file itself
-!.gitignore
-
-# Do not ignore the storage/images folder and its contents
-!/storage/images

@@ -11,8 +11,7 @@
                         <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                             <img src="{{ Storage::url($image->image_path) }}" class="d-block w-100" alt="{{ $image->title }}">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ $image->title }}</h5>
-                                <p>Order: {{ $image->order }}</p>
+                                <h5>{{ $image->order }}</h5>
                             </div>
                         </div>
                     @endforeach
