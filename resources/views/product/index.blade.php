@@ -26,6 +26,7 @@
                             <td>{{ $pd->product_name }}</td>
                             <td>{{ $pd->product_category }}</td>
                             <td>{{ $pd->product_price }}</td>
+                            {{-- <td><img src="{{ asset('images/menus/' . $pd->product_image) }}"></td> --}}
                             <td>{{ $pd->product_image }}</td>
                             <td>{{ $pd->product_description }}</td>
                             <td>
