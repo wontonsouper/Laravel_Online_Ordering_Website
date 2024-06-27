@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             MenuImagesSeeder::class,
             ProductsTableSeeder::class,
             ReviewsSeeder::class,
+            UsersSeeder::class,
         ]);
     }
 }

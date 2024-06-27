@@ -1,0 +1,5 @@
+"id","name","email","email_verified_at","password","remember_token","created_at","updated_at"
+"1","Pillows","pillows100gr@gmail.com",NULL,"$2y$10$KL6QhEqoLSNoawahtKJgH.82B.UTImlcaL41eEhb6qHEwfYIX86p2",NULL,"2024-06-27 09:23:31","2024-06-27 09:23:31"
+"2","test","testing@gmail.com",NULL,"$2y$10$X.bozavH/i3Lpc7GP6JbD.M/mFUui06VBm9duEUXttjdtuSPqu2ie",NULL,"2024-06-27 09:24:08","2024-06-27 09:24:08"
+"3","Gregor","christabella.535220166@stu.untar.ac.id",NULL,"$2y$10$QazWLZBPGA9OWuPSoLit3u3Ls4fwH5ZCjA05EjuaFbNRokIbVZKdm",NULL,"2024-06-27 09:24:41","2024-06-27 09:24:41"
+"4","Demo","demoemail@gmail.com",NULL,"$2y$10$BLwozq7e8xMI8XyjvjKLEecD4GHGYBqQpUxu1k3Fidt8hK5Kr1MY.",NULL,"2024-06-27 09:25:54","2024-06-27 09:25:54"
