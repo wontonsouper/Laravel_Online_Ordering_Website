@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 
 class UsersSeeder extends Seeder
 {
@@ -15,26 +16,31 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        // Sample user data
-        $users = [
-            [
-                'name' => 'John Doe',
-                'email' => 'john.doe@example.com',
-                'password' => Hash::make('password123'),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Jane Smith',
-                'email' => 'jane.smith@example.com',
-                'password' => Hash::make('password456'),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Add more users as needed
-        ];
+        // Path to the CSV file
+        $filePath = database_path('seeders/data/users.csv');
+        
+        // Open the CSV file
+        if (($handle = fopen($filePath, 'r')) !== FALSE) {
+            // Get the header row
+            $header = fgetcsv($handle, 1000, ',');
 
-        // Insert data into the users table
-        DB::table('users')->insert($users);
+            // Loop through each row of the CSV file
+            while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
+                // Create an associative array with column names as keys and row data as values
+                $rowData = array_combine($header, $data);
+
+                // Insert the data into the database
+                DB::table('users')->insert([
+                    'name' => $rowData['name'],
+                    'email' => $rowData['email'],
+                    'password' => Hash::make($rowData['password']), // Hash the password
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+
+            // Close the file
+            fclose($handle);
+        }
     }
 }
