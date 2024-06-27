@@ -7,29 +7,34 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-    // index
+    // Index method to list all users
     public function index()
     {
+        Log::info('Fetching all users');
         $users = User::all();
 
         return view('user.index', compact('users'));
     }
 
+    // Show the form to create a new user
     public function create()
     {
         return view('user.create');
     }
 
+    // Show the form to edit an existing user
     public function edit($id)
     {
         $user = User::find($id);
+        Log::info('Editing user', ['user_id' => $id]);
         return view('user.edit', compact('user'));
     }
 
-    // store method for user
+    // Store a new user
     public function store(Request $request)
     {
         $request->validate([
@@ -37,6 +42,8 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
+
+        Log::info('Creating new user', ['name' => $request->name, 'email' => $request->email]);
 
         User::create([
             'name' => $request->name,
@@ -48,7 +55,7 @@ class UserController extends Controller
             ->with('success', 'User created successfully.');
     }
 
-    // update method for user
+    // Update an existing user
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -56,6 +63,8 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'password' => 'nullable|string|min:8|confirmed',
         ]);
+
+        Log::info('Updating user', ['user_id' => $id]);
 
         $user = User::find($id);
         $user->update([
@@ -68,8 +77,11 @@ class UserController extends Controller
             ->with('success', 'User updated successfully.');
     }
 
+    // Delete an existing user
     public function destroy($id)
     {
+        Log::info('Deleting user', ['user_id' => $id]);
+
         $user = User::find($id);
         $user->delete();
 
