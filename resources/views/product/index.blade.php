@@ -5,6 +5,17 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <h1>Daftar Product</h1>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             {{-- button Add --}}
             <a href="{{ route('product.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
             <table class="table">
