@@ -4,30 +4,39 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
-    //index
+    // Index method to list all products
     public function index()
     {
+        Log::info('Fetching all products');
         $product = Product::all();
 
         return view('product.index', compact('product'));
     }
 
+    // Show the form to create a new product
     public function create()
     {
         return view('product.create');
     }
 
+    // Show the form to edit a product
     public function edit($id)
     {
         $pd = Product::find($id);
+        if (!$pd) {
+            return redirect()->route('product')->with('error', 'Product not found.');
+        }
+
         return view('product.edit', compact('pd'));
     }
 
-    // Store method for Product
-    public function store(Request $request) {
+    // Store a new product
+    public function store(Request $request)
+    {
         $request->validate([
             'product_name' => 'required',
             'product_category' => 'required',
@@ -35,12 +44,20 @@ class ProductController extends Controller
             'product_image' => 'required',
             'product_description' => 'required',
         ]);
+
+        Log::info('Creating new product', $request->all());
+
         $product = Product::create($request->all());
-        return redirect()->route('product')
-            ->with('success', 'Product created successfully.');
+
+        if ($product) {
+            return redirect()->route('product')->with('success', 'Product created successfully.');
+        } else {
+            Log::error('Failed to create product', $request->all());
+            return redirect()->back()->with('error', 'Failed to create product.');
+        }
     }
 
-    // Edit method for Product
+    // Update a product
     public function update (Request $request, $id)
     {
         $request->validate(rules: [
@@ -50,24 +67,31 @@ class ProductController extends Controller
             'product_image' => 'required',
             'product_description' => 'required',
         ]);
-        $update = [
-            'product_name' => $request->product_name,
-            'product_category' => $request->product_category,
-            'product_price' => $request->product_price,
-            'product_image' => $request->product_image,
-            'product_description' => $request->product_description,
-        ];
-        Product::whereId($id)->update($update);
-        return redirect()->route(route: 'product')
-            ->with(key: 'success', value: 'Product updated successfully');
+
+        $product = Product::find($id);
+        if (!$product) {
+            return redirect()->route('product')->with('error', 'Product not found.');
+        }
+
+        Log::info('Updating product', $request->all());
+
+        $product->update($request->all());
+
+        return redirect()->route('product')->with('success', 'Product updated successfully.');
     }
 
-    // Destroy method for Product
+    // Delete a product
     public function destroy($id)
     {
-        $pd = Product::find($id);
-        $pd -> delete();
-        return redirect()->route('product')
-            ->with('success', 'Product deleted successfully');
+        $product = Product::find($id);
+        if (!$product) {
+            return redirect()->route('product')->with('error', 'Product not found.');
+        }
+
+        Log::info('Deleting product', ['product_id' => $id]);
+
+        $product->delete();
+
+        return redirect()->route('product')->with('success', 'Product deleted successfully.');
     }
 }
