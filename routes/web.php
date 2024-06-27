@@ -44,6 +44,7 @@ Route::get('/review/create', [ReviewController::class, 'create'])->name('review.
 Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
 
 // order checkout routes
+Route::get('/order/success', [OrderController::class, 'success'])->name('order.success');
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
 
 // cart routes
