@@ -2,6 +2,25 @@
 
 @section('content')
 
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Our Clients Say!</h1>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach($reviews as $review)
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>{{ $review->review_text }}</p>
+                        <h5 class="mb-1">{{ $review->review_name }}</h5>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+    <!-- Testimonial End -->
+
  <!-- Review Create Start -->
  <section class="page-section portfolio" id="tambah-review">
     <div class="container">

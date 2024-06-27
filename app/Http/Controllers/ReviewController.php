@@ -20,7 +20,10 @@ class ReviewController extends Controller
     // Show the form to create a new review
     public function create()
     {
-        return view('review.create');
+        Log::info('Fetching all approved reviews');
+        $reviews = Review::where('review_approved', true)->get();
+        
+        return view('review.create', compact('reviews'));
     }
 
     // Store a new review

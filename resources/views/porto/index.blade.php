@@ -1,31 +1,6 @@
 @extends('layouts.template')
 
 @section('content')
-    <!-- Carousel Start -->
-    <div class="container-fluid bg-dark p-0 mb-5">
-        <div class="row g-0 flex-column-reverse flex-lg-row">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="owl-carousel header-carousel">
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/menus/Porto_s Big Breakfast.jpeg') }}" alt="">
-                    </div>
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/menus/Creamy Ginger Linguine.JPG') }}" alt="">
-                    </div>
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/menus/Nachos.jpg') }}" alt="">
-                    </div>
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/menus/khewnyuk.jpg') }}" alt="">
-                    </div>
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/menus/Kue Lobak.jpg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
     
     <!-- About Us Start -->
     <div class="container-fluid py-5">
@@ -227,21 +202,5 @@
     </div>
 
     <!-- Visiting Hours End -->
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Our Clients Say!</h1>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>Test</p>
-                        <h5 class="mb-1">Name</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
     
 @endsection
