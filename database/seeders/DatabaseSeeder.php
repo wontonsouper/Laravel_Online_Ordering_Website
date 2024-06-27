@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             MenuImagesSeeder::class,
+            ReviewsSeeder::class,
         ]);
     }
 }
