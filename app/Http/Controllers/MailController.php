@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use App\Mail\DemoMail;
 
 class MailController extends Controller
@@ -26,8 +27,23 @@ class MailController extends Controller
             'message' => $request->message,
         ];
 
-        Mail::to($request->email)->send(new DemoMail($mailData));
+        try {
+            Mail::to($request->email)->send(new DemoMail($mailData));
 
-        return redirect()->route('mail')->with('success', 'Email sent successfully.');
+            Log::info('Email sent successfully', [
+                'recipient' => $request->email,
+                'subject' => $request->subject,
+            ]);
+
+            return redirect()->route('mail')->with('success', 'Email sent successfully.');
+        } catch (\Exception $e) {
+            Log::error('Failed to send email', [
+                'recipient' => $request->email,
+                'subject' => $request->subject,
+                'error' => $e->getMessage(),
+            ]);
+
+            return redirect()->back()->with('error', 'Failed to send email.');
+        }
     }
 }
