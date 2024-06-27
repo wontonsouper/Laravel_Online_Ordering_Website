@@ -25,7 +25,9 @@
                             <td>{{ $pd->id }}</td>
                             <td>{{ $pd->product_name }}</td>
                             <td>{{ $pd->product_category }}</td>
-                            <td>{{ $pd->product_price }}</td>
+                            <td>
+                                <p class="fw-bold me-2">Rp. {{ number_format($pd->product_price, 0, ',', '.') }}</p>
+                            </td>
                             {{-- <td><img src="{{ asset('images/menus/' . $pd->product_image) }}"></td> --}}
                             <td>{{ $pd->product_image }}</td>
                             <td>{{ $pd->product_description }}</td>
