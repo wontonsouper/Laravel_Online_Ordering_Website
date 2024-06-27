@@ -33,7 +33,7 @@ class UsersSeeder extends Seeder
                 DB::table('users')->insert([
                     'name' => $rowData['name'],
                     'email' => $rowData['email'],
-                    'password' => Hash::make($rowData['password']), // Hash the password
+                    'password' => $rowData['password'], // Hash the password
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
