@@ -19,6 +19,7 @@
             <thead>
                 <tr>
                     <th scope="col">Order ID</th>
+                    <th scope="col">Time</th>
                     <th scope="col">Table</th>
                     <th scope="col">Total</th>
                     <th scope="col">Status</th>
@@ -29,6 +30,7 @@
                 @foreach($orders as $order)
                 <tr>
                     <td>{{ $order->id }}</td>
+                    <td>{{ $order->created_at }}</td>
                     <td>{{ $order->order_table }}</td>
                     <td>Rp. {{ number_format($order->order_total, 0, ',', '.') }}</td>
                     <td>
