@@ -7,6 +7,17 @@
         <section class="page-section portfolio" id="tambah">
             <div class="container">
                 <h1>Edit Data Product</h1>
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form action="{{ route('product.update', $pd->id) }}" method="POST">
                     @method('PUT')
                     @csrf

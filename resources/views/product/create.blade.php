@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.app')
 
 
 @section('content')
@@ -6,6 +6,17 @@
 <div class="container-fluid menus py-5">
     <div class="container py-5">
         <h1 class="mb-4">Tambah Data Product</h1>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="row g-4">
             <div class="col-lg-12">
                 <div class="row g-4">
