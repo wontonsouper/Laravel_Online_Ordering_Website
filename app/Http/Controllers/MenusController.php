@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MenuImage;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class MenusController extends Controller
 {
@@ -33,14 +34,21 @@ class MenusController extends Controller
             'order' => 'required|integer',
         ]);
 
-        $imagePath = $request->file('image')->store('public/images/full_menu');
-        MenuImage::create([
-            'title' => $request->title,
-            'image_path' => $imagePath,
-            'order' => $request->order,
-        ]);
+        try {
+            $imagePath = $request->file('image')->store('public/images/full_menu');
+            MenuImage::create([
+                'title' => $request->title,
+                'image_path' => $imagePath,
+                'order' => $request->order,
+            ]);
 
-        return redirect()->route('menu')->with('success', 'Image uploaded successfully.');
+            Log::info('Image uploaded successfully', ['title' => $request->title]);
+
+            return redirect()->route('menu')->with('success', 'Image uploaded successfully.');
+        } catch (\Exception $e) {
+            Log::error('Failed to upload image', ['error' => $e->getMessage()]);
+            return redirect()->back()->with('error', 'Failed to upload image.');
+        }
     }
 
     public function edit($id)
@@ -61,21 +69,34 @@ class MenusController extends Controller
         $image->title = $request->title;
         $image->order = $request->order;
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/images/full_menu');
-            $image->image_path = $imagePath;
+        try {
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('public/images/full_menu');
+                $image->image_path = $imagePath;
+            }
+
+            $image->save();
+
+            Log::info('Image updated successfully', ['title' => $image->title]);
+
+            return redirect()->route('menu')->with('success', 'Image updated successfully.');
+        } catch (\Exception $e) {
+            Log::error('Failed to update image', ['error' => $e->getMessage()]);
+            return redirect()->back()->with('error', 'Failed to update image.');
         }
-
-        $image->save();
-
-        return redirect()->route('menu')->with('success', 'Image updated successfully.');
     }
 
     public function destroy($id)
     {
         $image = MenuImage::findOrFail($id);
-        $image->delete();
 
-        return redirect()->route('menu')->with('success', 'Image deleted successfully.');
+        try {
+            $image->delete();
+            Log::info('Image deleted successfully', ['title' => $image->title]);
+            return redirect()->route('menu')->with('success', 'Image deleted successfully.');
+        } catch (\Exception $e) {
+            Log::error('Failed to delete image', ['error' => $e->getMessage()]);
+            return redirect()->back()->with('error', 'Failed to delete image.');
+        }
     }
 }
