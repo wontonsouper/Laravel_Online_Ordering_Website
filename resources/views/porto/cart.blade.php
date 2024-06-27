@@ -3,6 +3,17 @@
 @section('content')
 <div class="container py-5">
     <h1 class="mb-4">Shopping Cart</h1>
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     @if(session('cart'))
     <div class="table-responsive">
         <table class="table">
