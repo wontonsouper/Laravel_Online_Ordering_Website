@@ -1,36 +1,37 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace Database\Seeders;
 
-return new class extends Migration
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
+class ProductsTableSeeder extends Seeder
 {
     /**
-     * Run the migrations.
+     * Run the database seeds.
      *
      * @return void
      */
-    public function up()
+    public function run()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('product_name');
-            $table->string('product_category');
-            $table->integer('product_price');
-            $table->string('product_image');
-            $table->text('product_description');
-            $table->timestamps();
-        });
-    }
+        // Path to the CSV file
+        $csvFile = base_path('database/seeders/products.csv');
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('products');
+        // Check if the file exists
+        if (!File::exists($csvFile)) {
+            throw new \Exception('products.csv not found');
+        }
+
+        // Read the CSV file
+        $data = array_map('str_getcsv', file($csvFile));
+
+        // Extract the headers
+        $headers = array_shift($data);
+
+        // Insert data into the database
+        foreach ($data as $row) {
+            DB::table('products')->insert(array_combine($headers, $row));
+        }
     }
-};
+}
