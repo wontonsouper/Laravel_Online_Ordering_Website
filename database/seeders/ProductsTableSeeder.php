@@ -16,7 +16,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         // Path to the CSV file
-        $csvFile = base_path('database/seeders/products.csv');
+        $csvFile = base_path('database/seeders/data/products.csv');
 
         // Check if the file exists
         if (!File::exists($csvFile)) {
