@@ -36,7 +36,5 @@ Username: Demo
 Email: demoemail@gmail.com
 Password: 12345678
 
-Project Presentation YouTube:
-Demo Program YouTube:
-PPT:
-Laporan:
+Link YouTube Presentasi: https://youtu.be/TxHE7RjXmh4
+Link YouTube Demo Program: https://youtu.be/C8KkVIqpG5c
