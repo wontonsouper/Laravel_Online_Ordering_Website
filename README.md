@@ -1,18 +1,3 @@
-# UAS_BackEnd
- 
-Website Porto's Cafe
-
-UAS BackEnd Programming
-
-Kelas D Kelompok 6:
-
-535220166 - Christabella Jocelynne Chandra
-
-535220170 - Angela Chow
-
-535220207 - Kelly Christella Gywen
-
-
 # OVERVIEW
 Porto's Cafe Website is a digital menu website for customers to place food and beverage orders in-store. The website is built using Laravel 10, a PHP framework, and PostgreSQL, a database management system.
 
